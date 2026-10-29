@@ -1,0 +1,1 @@
+var e=class{t=0;onInit(e){globalThis.__pa=e}onUpdate(e){this.t+=e;let t=globalThis.__pa;this.t>1&&!globalThis.__pinged&&(globalThis.__pinged=!0,t.emit(`ping`,{v:42}))}};export{e as default};

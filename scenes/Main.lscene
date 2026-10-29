@@ -1,0 +1,2907 @@
+{
+  "format": "linden-scene",
+  "version": 2,
+  "name": "Main",
+  "settings": {
+    "ambientColor": "#666666",
+    "skybox": null
+  },
+  "entities": [
+    {
+      "id": "ent-floor",
+      "name": "Arena Floor",
+      "parentId": null,
+      "active": true,
+      "tags": [],
+      "components": [
+        {
+          "type": "Transform",
+          "data": {
+            "position": [
+              0,
+              -0.25,
+              0
+            ],
+            "rotation": [
+              0,
+              0,
+              0
+            ],
+            "scale": [
+              30,
+              0.5,
+              30
+            ]
+          }
+        },
+        {
+          "type": "MeshRenderer",
+          "data": {
+            "primitive": "box",
+            "color": "#2a343f",
+            "roughness": 0.95,
+            "metalness": 0.05
+          }
+        },
+        {
+          "type": "BoxCollider",
+          "data": {
+            "size": {
+              "x": 1,
+              "y": 1,
+              "z": 1
+            }
+          }
+        }
+      ],
+      "static": true,
+      "layer": 0
+    },
+    {
+      "id": "ent-spawn-pad",
+      "name": "Spawn Pad",
+      "parentId": null,
+      "active": true,
+      "tags": [],
+      "components": [
+        {
+          "type": "Transform",
+          "data": {
+            "position": [
+              0,
+              0.015,
+              9.5
+            ],
+            "rotation": [
+              0,
+              0,
+              0
+            ],
+            "scale": [
+              5,
+              0.03,
+              5
+            ]
+          }
+        },
+        {
+          "type": "MeshRenderer",
+          "data": {
+            "primitive": "box",
+            "color": "#155e75",
+            "roughness": 0.6,
+            "metalness": 0.05
+          }
+        }
+      ],
+      "static": true,
+      "layer": 0
+    },
+    {
+      "id": "ent-wall-n",
+      "name": "Wall North",
+      "parentId": null,
+      "active": true,
+      "tags": [],
+      "components": [
+        {
+          "type": "Transform",
+          "data": {
+            "position": [
+              0,
+              2.5,
+              -15.25
+            ],
+            "rotation": [
+              0,
+              0,
+              0
+            ],
+            "scale": [
+              30.5,
+              5,
+              0.5
+            ]
+          }
+        },
+        {
+          "type": "MeshRenderer",
+          "data": {
+            "primitive": "box",
+            "color": "#1f2833",
+            "roughness": 0.85,
+            "metalness": 0.05
+          }
+        },
+        {
+          "type": "BoxCollider",
+          "data": {
+            "size": {
+              "x": 1,
+              "y": 1,
+              "z": 1
+            }
+          }
+        }
+      ],
+      "static": true,
+      "layer": 0
+    },
+    {
+      "id": "ent-wall-s",
+      "name": "Wall South",
+      "parentId": null,
+      "active": true,
+      "tags": [],
+      "components": [
+        {
+          "type": "Transform",
+          "data": {
+            "position": [
+              0,
+              2.5,
+              15.25
+            ],
+            "rotation": [
+              0,
+              0,
+              0
+            ],
+            "scale": [
+              30.5,
+              5,
+              0.5
+            ]
+          }
+        },
+        {
+          "type": "MeshRenderer",
+          "data": {
+            "primitive": "box",
+            "color": "#1f2833",
+            "roughness": 0.85,
+            "metalness": 0.05
+          }
+        },
+        {
+          "type": "BoxCollider",
+          "data": {
+            "size": {
+              "x": 1,
+              "y": 1,
+              "z": 1
+            }
+          }
+        }
+      ],
+      "static": true,
+      "layer": 0
+    },
+    {
+      "id": "ent-wall-w",
+      "name": "Wall West",
+      "parentId": null,
+      "active": true,
+      "tags": [],
+      "components": [
+        {
+          "type": "Transform",
+          "data": {
+            "position": [
+              -15.25,
+              2.5,
+              0
+            ],
+            "rotation": [
+              0,
+              0,
+              0
+            ],
+            "scale": [
+              0.5,
+              5,
+              30.5
+            ]
+          }
+        },
+        {
+          "type": "MeshRenderer",
+          "data": {
+            "primitive": "box",
+            "color": "#1f2833",
+            "roughness": 0.85,
+            "metalness": 0.05
+          }
+        },
+        {
+          "type": "BoxCollider",
+          "data": {
+            "size": {
+              "x": 1,
+              "y": 1,
+              "z": 1
+            }
+          }
+        }
+      ],
+      "static": true,
+      "layer": 0
+    },
+    {
+      "id": "ent-wall-e",
+      "name": "Wall East",
+      "parentId": null,
+      "active": true,
+      "tags": [],
+      "components": [
+        {
+          "type": "Transform",
+          "data": {
+            "position": [
+              15.25,
+              2.5,
+              0
+            ],
+            "rotation": [
+              0,
+              0,
+              0
+            ],
+            "scale": [
+              0.5,
+              5,
+              30.5
+            ]
+          }
+        },
+        {
+          "type": "MeshRenderer",
+          "data": {
+            "primitive": "box",
+            "color": "#1f2833",
+            "roughness": 0.85,
+            "metalness": 0.05
+          }
+        },
+        {
+          "type": "BoxCollider",
+          "data": {
+            "size": {
+              "x": 1,
+              "y": 1,
+              "z": 1
+            }
+          }
+        }
+      ],
+      "static": true,
+      "layer": 0
+    },
+    {
+      "id": "ent-accent-n",
+      "name": "Accent North",
+      "parentId": null,
+      "active": true,
+      "tags": [],
+      "components": [
+        {
+          "type": "Transform",
+          "data": {
+            "position": [
+              0,
+              0.07,
+              -14.94
+            ],
+            "rotation": [
+              0,
+              0,
+              0
+            ],
+            "scale": [
+              29.4,
+              0.1,
+              0.08
+            ]
+          }
+        },
+        {
+          "type": "MeshRenderer",
+          "data": {
+            "primitive": "box",
+            "color": "#22d3ee",
+            "roughness": 0.85,
+            "metalness": 0.05
+          }
+        }
+      ],
+      "static": true,
+      "layer": 0
+    },
+    {
+      "id": "ent-accent-s",
+      "name": "Accent South",
+      "parentId": null,
+      "active": true,
+      "tags": [],
+      "components": [
+        {
+          "type": "Transform",
+          "data": {
+            "position": [
+              0,
+              0.07,
+              14.94
+            ],
+            "rotation": [
+              0,
+              0,
+              0
+            ],
+            "scale": [
+              29.4,
+              0.1,
+              0.08
+            ]
+          }
+        },
+        {
+          "type": "MeshRenderer",
+          "data": {
+            "primitive": "box",
+            "color": "#22d3ee",
+            "roughness": 0.85,
+            "metalness": 0.05
+          }
+        }
+      ],
+      "static": true,
+      "layer": 0
+    },
+    {
+      "id": "ent-accent-w",
+      "name": "Accent West",
+      "parentId": null,
+      "active": true,
+      "tags": [],
+      "components": [
+        {
+          "type": "Transform",
+          "data": {
+            "position": [
+              -14.94,
+              0.07,
+              0
+            ],
+            "rotation": [
+              0,
+              0,
+              0
+            ],
+            "scale": [
+              0.08,
+              0.1,
+              29.4
+            ]
+          }
+        },
+        {
+          "type": "MeshRenderer",
+          "data": {
+            "primitive": "box",
+            "color": "#22d3ee",
+            "roughness": 0.85,
+            "metalness": 0.05
+          }
+        }
+      ],
+      "static": true,
+      "layer": 0
+    },
+    {
+      "id": "ent-accent-e",
+      "name": "Accent East",
+      "parentId": null,
+      "active": true,
+      "tags": [],
+      "components": [
+        {
+          "type": "Transform",
+          "data": {
+            "position": [
+              14.94,
+              0.07,
+              0
+            ],
+            "rotation": [
+              0,
+              0,
+              0
+            ],
+            "scale": [
+              0.08,
+              0.1,
+              29.4
+            ]
+          }
+        },
+        {
+          "type": "MeshRenderer",
+          "data": {
+            "primitive": "box",
+            "color": "#22d3ee",
+            "roughness": 0.85,
+            "metalness": 0.05
+          }
+        }
+      ],
+      "static": true,
+      "layer": 0
+    },
+    {
+      "id": "ent-pillar-0",
+      "name": "Pillar 1",
+      "parentId": null,
+      "active": true,
+      "tags": [],
+      "components": [
+        {
+          "type": "Transform",
+          "data": {
+            "position": [
+              -6.5,
+              2.3,
+              1
+            ],
+            "rotation": [
+              0,
+              0,
+              0
+            ],
+            "scale": [
+              1.4,
+              4.6,
+              1.4
+            ]
+          }
+        },
+        {
+          "type": "MeshRenderer",
+          "data": {
+            "primitive": "box",
+            "color": "#37465c",
+            "roughness": 0.7,
+            "metalness": 0.15
+          }
+        },
+        {
+          "type": "BoxCollider",
+          "data": {
+            "size": {
+              "x": 1,
+              "y": 1,
+              "z": 1
+            }
+          }
+        }
+      ],
+      "static": true,
+      "layer": 0
+    },
+    {
+      "id": "ent-pillar-cap-0",
+      "name": "Pillar Cap 1",
+      "parentId": null,
+      "active": true,
+      "tags": [],
+      "components": [
+        {
+          "type": "Transform",
+          "data": {
+            "position": [
+              -6.5,
+              4.66,
+              1
+            ],
+            "rotation": [
+              0,
+              0,
+              0
+            ],
+            "scale": [
+              1.62,
+              0.12,
+              1.62
+            ]
+          }
+        },
+        {
+          "type": "MeshRenderer",
+          "data": {
+            "primitive": "box",
+            "color": "#22d3ee",
+            "roughness": 0.4,
+            "metalness": 0.05
+          }
+        }
+      ],
+      "static": true,
+      "layer": 0
+    },
+    {
+      "id": "ent-pillar-1",
+      "name": "Pillar 2",
+      "parentId": null,
+      "active": true,
+      "tags": [],
+      "components": [
+        {
+          "type": "Transform",
+          "data": {
+            "position": [
+              6.5,
+              2.3,
+              1
+            ],
+            "rotation": [
+              0,
+              0,
+              0
+            ],
+            "scale": [
+              1.4,
+              4.6,
+              1.4
+            ]
+          }
+        },
+        {
+          "type": "MeshRenderer",
+          "data": {
+            "primitive": "box",
+            "color": "#37465c",
+            "roughness": 0.7,
+            "metalness": 0.15
+          }
+        },
+        {
+          "type": "BoxCollider",
+          "data": {
+            "size": {
+              "x": 1,
+              "y": 1,
+              "z": 1
+            }
+          }
+        }
+      ],
+      "static": true,
+      "layer": 0
+    },
+    {
+      "id": "ent-pillar-cap-1",
+      "name": "Pillar Cap 2",
+      "parentId": null,
+      "active": true,
+      "tags": [],
+      "components": [
+        {
+          "type": "Transform",
+          "data": {
+            "position": [
+              6.5,
+              4.66,
+              1
+            ],
+            "rotation": [
+              0,
+              0,
+              0
+            ],
+            "scale": [
+              1.62,
+              0.12,
+              1.62
+            ]
+          }
+        },
+        {
+          "type": "MeshRenderer",
+          "data": {
+            "primitive": "box",
+            "color": "#22d3ee",
+            "roughness": 0.4,
+            "metalness": 0.05
+          }
+        }
+      ],
+      "static": true,
+      "layer": 0
+    },
+    {
+      "id": "ent-pillar-2",
+      "name": "Pillar 3",
+      "parentId": null,
+      "active": true,
+      "tags": [],
+      "components": [
+        {
+          "type": "Transform",
+          "data": {
+            "position": [
+              -10.5,
+              2.3,
+              -6
+            ],
+            "rotation": [
+              0,
+              0,
+              0
+            ],
+            "scale": [
+              1.4,
+              4.6,
+              1.4
+            ]
+          }
+        },
+        {
+          "type": "MeshRenderer",
+          "data": {
+            "primitive": "box",
+            "color": "#37465c",
+            "roughness": 0.7,
+            "metalness": 0.15
+          }
+        },
+        {
+          "type": "BoxCollider",
+          "data": {
+            "size": {
+              "x": 1,
+              "y": 1,
+              "z": 1
+            }
+          }
+        }
+      ],
+      "static": true,
+      "layer": 0
+    },
+    {
+      "id": "ent-pillar-cap-2",
+      "name": "Pillar Cap 3",
+      "parentId": null,
+      "active": true,
+      "tags": [],
+      "components": [
+        {
+          "type": "Transform",
+          "data": {
+            "position": [
+              -10.5,
+              4.66,
+              -6
+            ],
+            "rotation": [
+              0,
+              0,
+              0
+            ],
+            "scale": [
+              1.62,
+              0.12,
+              1.62
+            ]
+          }
+        },
+        {
+          "type": "MeshRenderer",
+          "data": {
+            "primitive": "box",
+            "color": "#22d3ee",
+            "roughness": 0.4,
+            "metalness": 0.05
+          }
+        }
+      ],
+      "static": true,
+      "layer": 0
+    },
+    {
+      "id": "ent-pillar-3",
+      "name": "Pillar 4",
+      "parentId": null,
+      "active": true,
+      "tags": [],
+      "components": [
+        {
+          "type": "Transform",
+          "data": {
+            "position": [
+              10.5,
+              2.3,
+              -6
+            ],
+            "rotation": [
+              0,
+              0,
+              0
+            ],
+            "scale": [
+              1.4,
+              4.6,
+              1.4
+            ]
+          }
+        },
+        {
+          "type": "MeshRenderer",
+          "data": {
+            "primitive": "box",
+            "color": "#37465c",
+            "roughness": 0.7,
+            "metalness": 0.15
+          }
+        },
+        {
+          "type": "BoxCollider",
+          "data": {
+            "size": {
+              "x": 1,
+              "y": 1,
+              "z": 1
+            }
+          }
+        }
+      ],
+      "static": true,
+      "layer": 0
+    },
+    {
+      "id": "ent-pillar-cap-3",
+      "name": "Pillar Cap 4",
+      "parentId": null,
+      "active": true,
+      "tags": [],
+      "components": [
+        {
+          "type": "Transform",
+          "data": {
+            "position": [
+              10.5,
+              4.66,
+              -6
+            ],
+            "rotation": [
+              0,
+              0,
+              0
+            ],
+            "scale": [
+              1.62,
+              0.12,
+              1.62
+            ]
+          }
+        },
+        {
+          "type": "MeshRenderer",
+          "data": {
+            "primitive": "box",
+            "color": "#22d3ee",
+            "roughness": 0.4,
+            "metalness": 0.05
+          }
+        }
+      ],
+      "static": true,
+      "layer": 0
+    },
+    {
+      "id": "ent-pillar-4",
+      "name": "Pillar 5",
+      "parentId": null,
+      "active": true,
+      "tags": [],
+      "components": [
+        {
+          "type": "Transform",
+          "data": {
+            "position": [
+              -6.5,
+              2.3,
+              7.5
+            ],
+            "rotation": [
+              0,
+              0,
+              0
+            ],
+            "scale": [
+              1.4,
+              4.6,
+              1.4
+            ]
+          }
+        },
+        {
+          "type": "MeshRenderer",
+          "data": {
+            "primitive": "box",
+            "color": "#37465c",
+            "roughness": 0.7,
+            "metalness": 0.15
+          }
+        },
+        {
+          "type": "BoxCollider",
+          "data": {
+            "size": {
+              "x": 1,
+              "y": 1,
+              "z": 1
+            }
+          }
+        }
+      ],
+      "static": true,
+      "layer": 0
+    },
+    {
+      "id": "ent-pillar-cap-4",
+      "name": "Pillar Cap 5",
+      "parentId": null,
+      "active": true,
+      "tags": [],
+      "components": [
+        {
+          "type": "Transform",
+          "data": {
+            "position": [
+              -6.5,
+              4.66,
+              7.5
+            ],
+            "rotation": [
+              0,
+              0,
+              0
+            ],
+            "scale": [
+              1.62,
+              0.12,
+              1.62
+            ]
+          }
+        },
+        {
+          "type": "MeshRenderer",
+          "data": {
+            "primitive": "box",
+            "color": "#22d3ee",
+            "roughness": 0.4,
+            "metalness": 0.05
+          }
+        }
+      ],
+      "static": true,
+      "layer": 0
+    },
+    {
+      "id": "ent-pillar-5",
+      "name": "Pillar 6",
+      "parentId": null,
+      "active": true,
+      "tags": [],
+      "components": [
+        {
+          "type": "Transform",
+          "data": {
+            "position": [
+              6.5,
+              2.3,
+              7.5
+            ],
+            "rotation": [
+              0,
+              0,
+              0
+            ],
+            "scale": [
+              1.4,
+              4.6,
+              1.4
+            ]
+          }
+        },
+        {
+          "type": "MeshRenderer",
+          "data": {
+            "primitive": "box",
+            "color": "#37465c",
+            "roughness": 0.7,
+            "metalness": 0.15
+          }
+        },
+        {
+          "type": "BoxCollider",
+          "data": {
+            "size": {
+              "x": 1,
+              "y": 1,
+              "z": 1
+            }
+          }
+        }
+      ],
+      "static": true,
+      "layer": 0
+    },
+    {
+      "id": "ent-pillar-cap-5",
+      "name": "Pillar Cap 6",
+      "parentId": null,
+      "active": true,
+      "tags": [],
+      "components": [
+        {
+          "type": "Transform",
+          "data": {
+            "position": [
+              6.5,
+              4.66,
+              7.5
+            ],
+            "rotation": [
+              0,
+              0,
+              0
+            ],
+            "scale": [
+              1.62,
+              0.12,
+              1.62
+            ]
+          }
+        },
+        {
+          "type": "MeshRenderer",
+          "data": {
+            "primitive": "box",
+            "color": "#22d3ee",
+            "roughness": 0.4,
+            "metalness": 0.05
+          }
+        }
+      ],
+      "static": true,
+      "layer": 0
+    },
+    {
+      "id": "ent-crate-1",
+      "name": "Crate A",
+      "parentId": null,
+      "active": true,
+      "tags": [],
+      "components": [
+        {
+          "type": "Transform",
+          "data": {
+            "position": [
+              -3.6,
+              0.8,
+              3.6
+            ],
+            "rotation": [
+              0,
+              0,
+              0
+            ],
+            "scale": [
+              1.6,
+              1.6,
+              1.6
+            ]
+          }
+        },
+        {
+          "type": "MeshRenderer",
+          "data": {
+            "primitive": "box",
+            "color": "#4b5b70",
+            "roughness": 0.85,
+            "metalness": 0.05
+          }
+        },
+        {
+          "type": "BoxCollider",
+          "data": {
+            "size": {
+              "x": 1,
+              "y": 1,
+              "z": 1
+            }
+          }
+        }
+      ],
+      "static": true,
+      "layer": 0
+    },
+    {
+      "id": "ent-crate-2",
+      "name": "Crate B",
+      "parentId": null,
+      "active": true,
+      "tags": [],
+      "components": [
+        {
+          "type": "Transform",
+          "data": {
+            "position": [
+              3.6,
+              0.8,
+              3.6
+            ],
+            "rotation": [
+              0,
+              0,
+              0
+            ],
+            "scale": [
+              1.6,
+              1.6,
+              1.6
+            ]
+          }
+        },
+        {
+          "type": "MeshRenderer",
+          "data": {
+            "primitive": "box",
+            "color": "#4b5b70",
+            "roughness": 0.85,
+            "metalness": 0.05
+          }
+        },
+        {
+          "type": "BoxCollider",
+          "data": {
+            "size": {
+              "x": 1,
+              "y": 1,
+              "z": 1
+            }
+          }
+        }
+      ],
+      "static": true,
+      "layer": 0
+    },
+    {
+      "id": "ent-platform",
+      "name": "Elevated Platform",
+      "parentId": null,
+      "active": true,
+      "tags": [],
+      "components": [
+        {
+          "type": "Transform",
+          "data": {
+            "position": [
+              0,
+              1.2,
+              -12
+            ],
+            "rotation": [
+              0,
+              0,
+              0
+            ],
+            "scale": [
+              12,
+              2.4,
+              6
+            ]
+          }
+        },
+        {
+          "type": "MeshRenderer",
+          "data": {
+            "primitive": "box",
+            "color": "#2f3b4b",
+            "roughness": 0.85,
+            "metalness": 0.05
+          }
+        },
+        {
+          "type": "BoxCollider",
+          "data": {
+            "size": {
+              "x": 1,
+              "y": 1,
+              "z": 1
+            }
+          }
+        }
+      ],
+      "static": true,
+      "layer": 0
+    },
+    {
+      "id": "ent-platform-edge",
+      "name": "Platform Edge Glow",
+      "parentId": null,
+      "active": true,
+      "tags": [],
+      "components": [
+        {
+          "type": "Transform",
+          "data": {
+            "position": [
+              0,
+              2.45,
+              -9.02
+            ],
+            "rotation": [
+              0,
+              0,
+              0
+            ],
+            "scale": [
+              12,
+              0.1,
+              0.2
+            ]
+          }
+        },
+        {
+          "type": "MeshRenderer",
+          "data": {
+            "primitive": "box",
+            "color": "#22d3ee",
+            "roughness": 0.35,
+            "metalness": 0.05
+          }
+        }
+      ],
+      "static": true,
+      "layer": 0
+    },
+    {
+      "id": "ent-step-1",
+      "name": "Step 1",
+      "parentId": null,
+      "active": true,
+      "tags": [],
+      "components": [
+        {
+          "type": "Transform",
+          "data": {
+            "position": [
+              0,
+              0.12,
+              -4
+            ],
+            "rotation": [
+              0,
+              0,
+              0
+            ],
+            "scale": [
+              3,
+              0.24,
+              0.55
+            ]
+          }
+        },
+        {
+          "type": "MeshRenderer",
+          "data": {
+            "primitive": "box",
+            "color": "#374457",
+            "roughness": 0.8,
+            "metalness": 0.05
+          }
+        },
+        {
+          "type": "BoxCollider",
+          "data": {
+            "size": {
+              "x": 1,
+              "y": 1,
+              "z": 1
+            }
+          }
+        }
+      ],
+      "static": true,
+      "layer": 0
+    },
+    {
+      "id": "ent-step-2",
+      "name": "Step 2",
+      "parentId": null,
+      "active": true,
+      "tags": [],
+      "components": [
+        {
+          "type": "Transform",
+          "data": {
+            "position": [
+              0,
+              0.24,
+              -4.55
+            ],
+            "rotation": [
+              0,
+              0,
+              0
+            ],
+            "scale": [
+              3,
+              0.48,
+              0.55
+            ]
+          }
+        },
+        {
+          "type": "MeshRenderer",
+          "data": {
+            "primitive": "box",
+            "color": "#3f4d61",
+            "roughness": 0.8,
+            "metalness": 0.05
+          }
+        },
+        {
+          "type": "BoxCollider",
+          "data": {
+            "size": {
+              "x": 1,
+              "y": 1,
+              "z": 1
+            }
+          }
+        }
+      ],
+      "static": true,
+      "layer": 0
+    },
+    {
+      "id": "ent-step-3",
+      "name": "Step 3",
+      "parentId": null,
+      "active": true,
+      "tags": [],
+      "components": [
+        {
+          "type": "Transform",
+          "data": {
+            "position": [
+              0,
+              0.36,
+              -5.1
+            ],
+            "rotation": [
+              0,
+              0,
+              0
+            ],
+            "scale": [
+              3,
+              0.72,
+              0.55
+            ]
+          }
+        },
+        {
+          "type": "MeshRenderer",
+          "data": {
+            "primitive": "box",
+            "color": "#374457",
+            "roughness": 0.8,
+            "metalness": 0.05
+          }
+        },
+        {
+          "type": "BoxCollider",
+          "data": {
+            "size": {
+              "x": 1,
+              "y": 1,
+              "z": 1
+            }
+          }
+        }
+      ],
+      "static": true,
+      "layer": 0
+    },
+    {
+      "id": "ent-step-4",
+      "name": "Step 4",
+      "parentId": null,
+      "active": true,
+      "tags": [],
+      "components": [
+        {
+          "type": "Transform",
+          "data": {
+            "position": [
+              0,
+              0.48,
+              -5.65
+            ],
+            "rotation": [
+              0,
+              0,
+              0
+            ],
+            "scale": [
+              3,
+              0.96,
+              0.55
+            ]
+          }
+        },
+        {
+          "type": "MeshRenderer",
+          "data": {
+            "primitive": "box",
+            "color": "#3f4d61",
+            "roughness": 0.8,
+            "metalness": 0.05
+          }
+        },
+        {
+          "type": "BoxCollider",
+          "data": {
+            "size": {
+              "x": 1,
+              "y": 1,
+              "z": 1
+            }
+          }
+        }
+      ],
+      "static": true,
+      "layer": 0
+    },
+    {
+      "id": "ent-step-5",
+      "name": "Step 5",
+      "parentId": null,
+      "active": true,
+      "tags": [],
+      "components": [
+        {
+          "type": "Transform",
+          "data": {
+            "position": [
+              0,
+              0.6,
+              -6.2
+            ],
+            "rotation": [
+              0,
+              0,
+              0
+            ],
+            "scale": [
+              3,
+              1.2,
+              0.55
+            ]
+          }
+        },
+        {
+          "type": "MeshRenderer",
+          "data": {
+            "primitive": "box",
+            "color": "#374457",
+            "roughness": 0.8,
+            "metalness": 0.05
+          }
+        },
+        {
+          "type": "BoxCollider",
+          "data": {
+            "size": {
+              "x": 1,
+              "y": 1,
+              "z": 1
+            }
+          }
+        }
+      ],
+      "static": true,
+      "layer": 0
+    },
+    {
+      "id": "ent-step-6",
+      "name": "Step 6",
+      "parentId": null,
+      "active": true,
+      "tags": [],
+      "components": [
+        {
+          "type": "Transform",
+          "data": {
+            "position": [
+              0,
+              0.72,
+              -6.75
+            ],
+            "rotation": [
+              0,
+              0,
+              0
+            ],
+            "scale": [
+              3,
+              1.44,
+              0.55
+            ]
+          }
+        },
+        {
+          "type": "MeshRenderer",
+          "data": {
+            "primitive": "box",
+            "color": "#3f4d61",
+            "roughness": 0.8,
+            "metalness": 0.05
+          }
+        },
+        {
+          "type": "BoxCollider",
+          "data": {
+            "size": {
+              "x": 1,
+              "y": 1,
+              "z": 1
+            }
+          }
+        }
+      ],
+      "static": true,
+      "layer": 0
+    },
+    {
+      "id": "ent-step-7",
+      "name": "Step 7",
+      "parentId": null,
+      "active": true,
+      "tags": [],
+      "components": [
+        {
+          "type": "Transform",
+          "data": {
+            "position": [
+              0,
+              0.84,
+              -7.300000000000001
+            ],
+            "rotation": [
+              0,
+              0,
+              0
+            ],
+            "scale": [
+              3,
+              1.68,
+              0.55
+            ]
+          }
+        },
+        {
+          "type": "MeshRenderer",
+          "data": {
+            "primitive": "box",
+            "color": "#374457",
+            "roughness": 0.8,
+            "metalness": 0.05
+          }
+        },
+        {
+          "type": "BoxCollider",
+          "data": {
+            "size": {
+              "x": 1,
+              "y": 1,
+              "z": 1
+            }
+          }
+        }
+      ],
+      "static": true,
+      "layer": 0
+    },
+    {
+      "id": "ent-step-8",
+      "name": "Step 8",
+      "parentId": null,
+      "active": true,
+      "tags": [],
+      "components": [
+        {
+          "type": "Transform",
+          "data": {
+            "position": [
+              0,
+              0.96,
+              -7.8500000000000005
+            ],
+            "rotation": [
+              0,
+              0,
+              0
+            ],
+            "scale": [
+              3,
+              1.92,
+              0.55
+            ]
+          }
+        },
+        {
+          "type": "MeshRenderer",
+          "data": {
+            "primitive": "box",
+            "color": "#3f4d61",
+            "roughness": 0.8,
+            "metalness": 0.05
+          }
+        },
+        {
+          "type": "BoxCollider",
+          "data": {
+            "size": {
+              "x": 1,
+              "y": 1,
+              "z": 1
+            }
+          }
+        }
+      ],
+      "static": true,
+      "layer": 0
+    },
+    {
+      "id": "ent-step-9",
+      "name": "Step 9",
+      "parentId": null,
+      "active": true,
+      "tags": [],
+      "components": [
+        {
+          "type": "Transform",
+          "data": {
+            "position": [
+              0,
+              1.08,
+              -8.4
+            ],
+            "rotation": [
+              0,
+              0,
+              0
+            ],
+            "scale": [
+              3,
+              2.16,
+              0.55
+            ]
+          }
+        },
+        {
+          "type": "MeshRenderer",
+          "data": {
+            "primitive": "box",
+            "color": "#374457",
+            "roughness": 0.8,
+            "metalness": 0.05
+          }
+        },
+        {
+          "type": "BoxCollider",
+          "data": {
+            "size": {
+              "x": 1,
+              "y": 1,
+              "z": 1
+            }
+          }
+        }
+      ],
+      "static": true,
+      "layer": 0
+    },
+    {
+      "id": "ent-step-10",
+      "name": "Step 10",
+      "parentId": null,
+      "active": true,
+      "tags": [],
+      "components": [
+        {
+          "type": "Transform",
+          "data": {
+            "position": [
+              0,
+              1.2,
+              -8.95
+            ],
+            "rotation": [
+              0,
+              0,
+              0
+            ],
+            "scale": [
+              3,
+              2.4,
+              0.55
+            ]
+          }
+        },
+        {
+          "type": "MeshRenderer",
+          "data": {
+            "primitive": "box",
+            "color": "#3f4d61",
+            "roughness": 0.8,
+            "metalness": 0.05
+          }
+        },
+        {
+          "type": "BoxCollider",
+          "data": {
+            "size": {
+              "x": 1,
+              "y": 1,
+              "z": 1
+            }
+          }
+        }
+      ],
+      "static": true,
+      "layer": 0
+    },
+    {
+      "id": "ent-target-a",
+      "name": "Target",
+      "parentId": null,
+      "active": true,
+      "tags": [
+        "Target"
+      ],
+      "components": [
+        {
+          "type": "Transform",
+          "data": {
+            "position": [
+              -9,
+              1.5,
+              3
+            ],
+            "rotation": [
+              90,
+              48,
+              0
+            ],
+            "scale": [
+              1.2,
+              0.14,
+              1.2
+            ]
+          }
+        },
+        {
+          "type": "MeshRenderer",
+          "data": {
+            "primitive": "cylinder",
+            "color": "#f97316",
+            "roughness": 0.35,
+            "metalness": 0.2
+          }
+        },
+        {
+          "type": "Script",
+          "data": {
+            "src": "scripts/TargetDummy.ts",
+            "props": {}
+          }
+        }
+      ],
+      "static": true,
+      "layer": 0
+    },
+    {
+      "id": "ent-target-a-ring",
+      "name": "Target Ring",
+      "parentId": null,
+      "active": true,
+      "tags": [],
+      "components": [
+        {
+          "type": "Transform",
+          "data": {
+            "position": [
+              -9,
+              1.5,
+              3
+            ],
+            "rotation": [
+              90,
+              48,
+              0
+            ],
+            "scale": [
+              2.1,
+              2.1,
+              2.1
+            ]
+          }
+        },
+        {
+          "type": "MeshRenderer",
+          "data": {
+            "primitive": "torus",
+            "color": "#22d3ee",
+            "roughness": 0.4,
+            "metalness": 0.4
+          }
+        }
+      ],
+      "static": true,
+      "layer": 0
+    },
+    {
+      "id": "ent-target-b",
+      "name": "Target",
+      "parentId": null,
+      "active": true,
+      "tags": [
+        "Target"
+      ],
+      "components": [
+        {
+          "type": "Transform",
+          "data": {
+            "position": [
+              9,
+              1.5,
+              3
+            ],
+            "rotation": [
+              90,
+              -48,
+              0
+            ],
+            "scale": [
+              1.2,
+              0.14,
+              1.2
+            ]
+          }
+        },
+        {
+          "type": "MeshRenderer",
+          "data": {
+            "primitive": "cylinder",
+            "color": "#f97316",
+            "roughness": 0.35,
+            "metalness": 0.2
+          }
+        },
+        {
+          "type": "Script",
+          "data": {
+            "src": "scripts/TargetDummy.ts",
+            "props": {}
+          }
+        }
+      ],
+      "static": true,
+      "layer": 0
+    },
+    {
+      "id": "ent-target-b-ring",
+      "name": "Target Ring",
+      "parentId": null,
+      "active": true,
+      "tags": [],
+      "components": [
+        {
+          "type": "Transform",
+          "data": {
+            "position": [
+              9,
+              1.5,
+              3
+            ],
+            "rotation": [
+              90,
+              -48,
+              0
+            ],
+            "scale": [
+              2.1,
+              2.1,
+              2.1
+            ]
+          }
+        },
+        {
+          "type": "MeshRenderer",
+          "data": {
+            "primitive": "torus",
+            "color": "#22d3ee",
+            "roughness": 0.4,
+            "metalness": 0.4
+          }
+        }
+      ],
+      "static": true,
+      "layer": 0
+    },
+    {
+      "id": "ent-target-c",
+      "name": "Target",
+      "parentId": null,
+      "active": true,
+      "tags": [
+        "Target"
+      ],
+      "components": [
+        {
+          "type": "Transform",
+          "data": {
+            "position": [
+              -7,
+              2.2,
+              -4
+            ],
+            "rotation": [
+              90,
+              25,
+              0
+            ],
+            "scale": [
+              1.2,
+              0.14,
+              1.2
+            ]
+          }
+        },
+        {
+          "type": "MeshRenderer",
+          "data": {
+            "primitive": "cylinder",
+            "color": "#f97316",
+            "roughness": 0.35,
+            "metalness": 0.2
+          }
+        },
+        {
+          "type": "Script",
+          "data": {
+            "src": "scripts/TargetDummy.ts",
+            "props": {
+              "bobAmp": 0.45,
+              "bobSpeed": 2.1,
+              "phase": 0
+            }
+          }
+        }
+      ],
+      "static": true,
+      "layer": 0
+    },
+    {
+      "id": "ent-target-c-ring",
+      "name": "Target Ring",
+      "parentId": null,
+      "active": true,
+      "tags": [],
+      "components": [
+        {
+          "type": "Transform",
+          "data": {
+            "position": [
+              -7,
+              2.2,
+              -4
+            ],
+            "rotation": [
+              90,
+              25,
+              0
+            ],
+            "scale": [
+              2.1,
+              2.1,
+              2.1
+            ]
+          }
+        },
+        {
+          "type": "MeshRenderer",
+          "data": {
+            "primitive": "torus",
+            "color": "#22d3ee",
+            "roughness": 0.4,
+            "metalness": 0.4
+          }
+        }
+      ],
+      "static": true,
+      "layer": 0
+    },
+    {
+      "id": "ent-target-d",
+      "name": "Target",
+      "parentId": null,
+      "active": true,
+      "tags": [
+        "Target"
+      ],
+      "components": [
+        {
+          "type": "Transform",
+          "data": {
+            "position": [
+              7,
+              2.2,
+              -4
+            ],
+            "rotation": [
+              90,
+              -25,
+              0
+            ],
+            "scale": [
+              1.2,
+              0.14,
+              1.2
+            ]
+          }
+        },
+        {
+          "type": "MeshRenderer",
+          "data": {
+            "primitive": "cylinder",
+            "color": "#f97316",
+            "roughness": 0.35,
+            "metalness": 0.2
+          }
+        },
+        {
+          "type": "Script",
+          "data": {
+            "src": "scripts/TargetDummy.ts",
+            "props": {
+              "bobAmp": 0.45,
+              "bobSpeed": 2.5,
+              "phase": 1.6
+            }
+          }
+        }
+      ],
+      "static": true,
+      "layer": 0
+    },
+    {
+      "id": "ent-target-d-ring",
+      "name": "Target Ring",
+      "parentId": null,
+      "active": true,
+      "tags": [],
+      "components": [
+        {
+          "type": "Transform",
+          "data": {
+            "position": [
+              7,
+              2.2,
+              -4
+            ],
+            "rotation": [
+              90,
+              -25,
+              0
+            ],
+            "scale": [
+              2.1,
+              2.1,
+              2.1
+            ]
+          }
+        },
+        {
+          "type": "MeshRenderer",
+          "data": {
+            "primitive": "torus",
+            "color": "#22d3ee",
+            "roughness": 0.4,
+            "metalness": 0.4
+          }
+        }
+      ],
+      "static": true,
+      "layer": 0
+    },
+    {
+      "id": "ent-target-e",
+      "name": "Target",
+      "parentId": null,
+      "active": true,
+      "tags": [
+        "Target"
+      ],
+      "components": [
+        {
+          "type": "Transform",
+          "data": {
+            "position": [
+              0,
+              1.6,
+              -3
+            ],
+            "rotation": [
+              90,
+              0,
+              0
+            ],
+            "scale": [
+              1.2,
+              0.14,
+              1.2
+            ]
+          }
+        },
+        {
+          "type": "MeshRenderer",
+          "data": {
+            "primitive": "cylinder",
+            "color": "#f97316",
+            "roughness": 0.35,
+            "metalness": 0.2
+          }
+        },
+        {
+          "type": "Script",
+          "data": {
+            "src": "scripts/TargetDummy.ts",
+            "props": {
+              "swayAmp": 22,
+              "swaySpeed": 1.5
+            }
+          }
+        }
+      ],
+      "static": true,
+      "layer": 0
+    },
+    {
+      "id": "ent-target-e-ring",
+      "name": "Target Ring",
+      "parentId": null,
+      "active": true,
+      "tags": [],
+      "components": [
+        {
+          "type": "Transform",
+          "data": {
+            "position": [
+              0,
+              1.6,
+              -3
+            ],
+            "rotation": [
+              90,
+              0,
+              0
+            ],
+            "scale": [
+              2.1,
+              2.1,
+              2.1
+            ]
+          }
+        },
+        {
+          "type": "MeshRenderer",
+          "data": {
+            "primitive": "torus",
+            "color": "#22d3ee",
+            "roughness": 0.4,
+            "metalness": 0.4
+          }
+        }
+      ],
+      "static": true,
+      "layer": 0
+    },
+    {
+      "id": "ent-target-f",
+      "name": "Target",
+      "parentId": null,
+      "active": true,
+      "tags": [
+        "Target"
+      ],
+      "components": [
+        {
+          "type": "Transform",
+          "data": {
+            "position": [
+              -4,
+              3.55,
+              -12
+            ],
+            "rotation": [
+              90,
+              10,
+              0
+            ],
+            "scale": [
+              1.2,
+              0.14,
+              1.2
+            ]
+          }
+        },
+        {
+          "type": "MeshRenderer",
+          "data": {
+            "primitive": "cylinder",
+            "color": "#f97316",
+            "roughness": 0.35,
+            "metalness": 0.2
+          }
+        },
+        {
+          "type": "Script",
+          "data": {
+            "src": "scripts/TargetDummy.ts",
+            "props": {}
+          }
+        }
+      ],
+      "static": true,
+      "layer": 0
+    },
+    {
+      "id": "ent-target-f-ring",
+      "name": "Target Ring",
+      "parentId": null,
+      "active": true,
+      "tags": [],
+      "components": [
+        {
+          "type": "Transform",
+          "data": {
+            "position": [
+              -4,
+              3.55,
+              -12
+            ],
+            "rotation": [
+              90,
+              10,
+              0
+            ],
+            "scale": [
+              2.1,
+              2.1,
+              2.1
+            ]
+          }
+        },
+        {
+          "type": "MeshRenderer",
+          "data": {
+            "primitive": "torus",
+            "color": "#22d3ee",
+            "roughness": 0.4,
+            "metalness": 0.4
+          }
+        }
+      ],
+      "static": true,
+      "layer": 0
+    },
+    {
+      "id": "ent-target-g",
+      "name": "Target",
+      "parentId": null,
+      "active": true,
+      "tags": [
+        "Target"
+      ],
+      "components": [
+        {
+          "type": "Transform",
+          "data": {
+            "position": [
+              4,
+              3.55,
+              -12
+            ],
+            "rotation": [
+              90,
+              -10,
+              0
+            ],
+            "scale": [
+              1.2,
+              0.14,
+              1.2
+            ]
+          }
+        },
+        {
+          "type": "MeshRenderer",
+          "data": {
+            "primitive": "cylinder",
+            "color": "#f97316",
+            "roughness": 0.35,
+            "metalness": 0.2
+          }
+        },
+        {
+          "type": "Script",
+          "data": {
+            "src": "scripts/TargetDummy.ts",
+            "props": {}
+          }
+        }
+      ],
+      "static": true,
+      "layer": 0
+    },
+    {
+      "id": "ent-target-g-ring",
+      "name": "Target Ring",
+      "parentId": null,
+      "active": true,
+      "tags": [],
+      "components": [
+        {
+          "type": "Transform",
+          "data": {
+            "position": [
+              4,
+              3.55,
+              -12
+            ],
+            "rotation": [
+              90,
+              -10,
+              0
+            ],
+            "scale": [
+              2.1,
+              2.1,
+              2.1
+            ]
+          }
+        },
+        {
+          "type": "MeshRenderer",
+          "data": {
+            "primitive": "torus",
+            "color": "#22d3ee",
+            "roughness": 0.4,
+            "metalness": 0.4
+          }
+        }
+      ],
+      "static": true,
+      "layer": 0
+    },
+    {
+      "id": "ent-target-h",
+      "name": "Bonus Target",
+      "parentId": null,
+      "active": true,
+      "tags": [
+        "Target",
+        "Bonus"
+      ],
+      "components": [
+        {
+          "type": "Transform",
+          "data": {
+            "position": [
+              0,
+              4.8,
+              -6.5
+            ],
+            "rotation": [
+              90,
+              0,
+              0
+            ],
+            "scale": [
+              0.95,
+              0.14,
+              0.95
+            ]
+          }
+        },
+        {
+          "type": "MeshRenderer",
+          "data": {
+            "primitive": "cylinder",
+            "color": "#fbbf24",
+            "roughness": 0.35,
+            "metalness": 0.2
+          }
+        },
+        {
+          "type": "Script",
+          "data": {
+            "src": "scripts/TargetDummy.ts",
+            "props": {
+              "bobAmp": 0.35,
+              "bobSpeed": 2.6,
+              "swayAmp": 26,
+              "swaySpeed": 1.8,
+              "respawnDelay": 3.2
+            }
+          }
+        }
+      ],
+      "static": true,
+      "layer": 0
+    },
+    {
+      "id": "ent-target-h-ring",
+      "name": "Target Ring",
+      "parentId": null,
+      "active": true,
+      "tags": [],
+      "components": [
+        {
+          "type": "Transform",
+          "data": {
+            "position": [
+              0,
+              4.8,
+              -6.5
+            ],
+            "rotation": [
+              90,
+              0,
+              0
+            ],
+            "scale": [
+              2.1,
+              2.1,
+              2.1
+            ]
+          }
+        },
+        {
+          "type": "MeshRenderer",
+          "data": {
+            "primitive": "torus",
+            "color": "#facc15",
+            "roughness": 0.4,
+            "metalness": 0.4
+          }
+        }
+      ],
+      "static": true,
+      "layer": 0
+    },
+    {
+      "id": "ent-target-i",
+      "name": "Bonus Target",
+      "parentId": null,
+      "active": true,
+      "tags": [
+        "Target",
+        "Bonus"
+      ],
+      "components": [
+        {
+          "type": "Transform",
+          "data": {
+            "position": [
+              -10.5,
+              4,
+              -9
+            ],
+            "rotation": [
+              90,
+              28,
+              0
+            ],
+            "scale": [
+              0.95,
+              0.14,
+              0.95
+            ]
+          }
+        },
+        {
+          "type": "MeshRenderer",
+          "data": {
+            "primitive": "cylinder",
+            "color": "#fbbf24",
+            "roughness": 0.35,
+            "metalness": 0.2
+          }
+        },
+        {
+          "type": "Script",
+          "data": {
+            "src": "scripts/TargetDummy.ts",
+            "props": {
+              "bobAmp": 0.55,
+              "bobSpeed": 1.7,
+              "respawnDelay": 3.2
+            }
+          }
+        }
+      ],
+      "static": true,
+      "layer": 0
+    },
+    {
+      "id": "ent-target-i-ring",
+      "name": "Target Ring",
+      "parentId": null,
+      "active": true,
+      "tags": [],
+      "components": [
+        {
+          "type": "Transform",
+          "data": {
+            "position": [
+              -10.5,
+              4,
+              -9
+            ],
+            "rotation": [
+              90,
+              28,
+              0
+            ],
+            "scale": [
+              2.1,
+              2.1,
+              2.1
+            ]
+          }
+        },
+        {
+          "type": "MeshRenderer",
+          "data": {
+            "primitive": "torus",
+            "color": "#facc15",
+            "roughness": 0.4,
+            "metalness": 0.4
+          }
+        }
+      ],
+      "static": true,
+      "layer": 0
+    },
+    {
+      "id": "ent-target-j",
+      "name": "Target",
+      "parentId": null,
+      "active": true,
+      "tags": [
+        "Target"
+      ],
+      "components": [
+        {
+          "type": "Transform",
+          "data": {
+            "position": [
+              10.5,
+              1.5,
+              6.5
+            ],
+            "rotation": [
+              90,
+              -67,
+              0
+            ],
+            "scale": [
+              1.2,
+              0.14,
+              1.2
+            ]
+          }
+        },
+        {
+          "type": "MeshRenderer",
+          "data": {
+            "primitive": "cylinder",
+            "color": "#f97316",
+            "roughness": 0.35,
+            "metalness": 0.2
+          }
+        },
+        {
+          "type": "Script",
+          "data": {
+            "src": "scripts/TargetDummy.ts",
+            "props": {
+              "swayAmp": 15,
+              "swaySpeed": 1.2
+            }
+          }
+        }
+      ],
+      "static": true,
+      "layer": 0
+    },
+    {
+      "id": "ent-target-j-ring",
+      "name": "Target Ring",
+      "parentId": null,
+      "active": true,
+      "tags": [],
+      "components": [
+        {
+          "type": "Transform",
+          "data": {
+            "position": [
+              10.5,
+              1.5,
+              6.5
+            ],
+            "rotation": [
+              90,
+              -67,
+              0
+            ],
+            "scale": [
+              2.1,
+              2.1,
+              2.1
+            ]
+          }
+        },
+        {
+          "type": "MeshRenderer",
+          "data": {
+            "primitive": "torus",
+            "color": "#22d3ee",
+            "roughness": 0.4,
+            "metalness": 0.4
+          }
+        }
+      ],
+      "static": true,
+      "layer": 0
+    },
+    {
+      "id": "ent-player",
+      "name": "Player",
+      "parentId": null,
+      "active": true,
+      "tags": [
+        "Player"
+      ],
+      "components": [
+        {
+          "type": "Transform",
+          "data": {
+            "position": [
+              0,
+              1,
+              11
+            ],
+            "rotation": [
+              0,
+              0,
+              0
+            ],
+            "scale": [
+              1,
+              1,
+              1
+            ]
+          }
+        },
+        {
+          "type": "CharacterController",
+          "data": {
+            "stepOffset": 0.3,
+            "slopeLimit": 50,
+            "skinWidth": 0.08
+          }
+        },
+        {
+          "type": "CapsuleCollider",
+          "data": {
+            "center": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "radius": 0.35,
+            "height": 1.8
+          }
+        },
+        {
+          "type": "CharacterMovement",
+          "data": {
+            "mode": "walk",
+            "qeMode": "turn",
+            "walkSpeed": 5.2,
+            "sprintSpeed": 7.8,
+            "crouchSpeed": 2.6,
+            "acceleration": 34,
+            "deceleration": 42,
+            "airControl": 0.45,
+            "jumpHeight": 1.25,
+            "gravity": 21,
+            "maxJumps": 1,
+            "coyoteTime": 0.1,
+            "jumpBuffer": 0.12,
+            "turnSpeed": 170,
+            "lookSpeed": 165,
+            "orientToMovement": false,
+            "cameraRelative": true,
+            "analogWalk": true,
+            "lockAxis": "none"
+          }
+        }
+      ],
+      "static": false,
+      "layer": 0
+    },
+    {
+      "id": "ent-player-camera",
+      "name": "PlayerCamera",
+      "parentId": "ent-player",
+      "active": true,
+      "tags": [
+        "MainCamera"
+      ],
+      "components": [
+        {
+          "type": "Transform",
+          "data": {
+            "position": [
+              0,
+              0.85,
+              0
+            ],
+            "rotation": [
+              0,
+              0,
+              0
+            ],
+            "scale": [
+              1,
+              1,
+              1
+            ]
+          }
+        },
+        {
+          "type": "Camera",
+          "data": {
+            "fov": 78,
+            "near": 0.05,
+            "far": 400,
+            "isActive": true
+          }
+        },
+        {
+          "type": "Script",
+          "data": {
+            "src": "scripts/PlayerShooter.ts",
+            "props": {
+              "fireRate": 0.11,
+              "hitRadius": 0.72
+            }
+          }
+        }
+      ],
+      "static": false,
+      "layer": 0
+    },
+    {
+      "id": "ent-game-manager",
+      "name": "GameManager",
+      "parentId": null,
+      "active": true,
+      "tags": [],
+      "components": [
+        {
+          "type": "Transform",
+          "data": {
+            "position": [
+              0,
+              0,
+              0
+            ],
+            "rotation": [
+              0,
+              0,
+              0
+            ],
+            "scale": [
+              1,
+              1,
+              1
+            ]
+          }
+        },
+        {
+          "type": "Script",
+          "data": {
+            "src": "scripts/HudController.ts",
+            "props": {
+              "roundTime": 90
+            }
+          }
+        },
+        {
+          "type": "HtmlUI",
+          "data": {
+            "src": "ui/hud.html",
+            "mode": "screen",
+            "zIndex": 10,
+            "pointerEvents": false
+          }
+        }
+      ],
+      "static": true,
+      "layer": 0
+    },
+    {
+      "id": "ent-dir-light",
+      "name": "Directional Light",
+      "parentId": null,
+      "active": true,
+      "tags": [],
+      "components": [
+        {
+          "type": "Transform",
+          "data": {
+            "position": [
+              8,
+              15,
+              7
+            ],
+            "rotation": [
+              50,
+              -30,
+              0
+            ],
+            "scale": [
+              1,
+              1,
+              1
+            ]
+          }
+        },
+        {
+          "type": "Light",
+          "data": {
+            "type": "directional",
+            "color": "#fff7ed",
+            "intensity": 1.35,
+            "castShadow": true
+          }
+        }
+      ],
+      "static": true,
+      "layer": 0
+    },
+    {
+      "id": "ent-light-cyan",
+      "name": "Cyan Fill Light",
+      "parentId": null,
+      "active": true,
+      "tags": [],
+      "components": [
+        {
+          "type": "Transform",
+          "data": {
+            "position": [
+              -11,
+              4.5,
+              -10
+            ],
+            "rotation": [
+              0,
+              0,
+              0
+            ],
+            "scale": [
+              1,
+              1,
+              1
+            ]
+          }
+        },
+        {
+          "type": "Light",
+          "data": {
+            "type": "point",
+            "color": "#22d3ee",
+            "intensity": 1.1,
+            "range": 22,
+            "castShadow": false
+          }
+        }
+      ],
+      "static": true,
+      "layer": 0
+    },
+    {
+      "id": "ent-light-amber",
+      "name": "Amber Fill Light",
+      "parentId": null,
+      "active": true,
+      "tags": [],
+      "components": [
+        {
+          "type": "Transform",
+          "data": {
+            "position": [
+              11,
+              4.5,
+              9
+            ],
+            "rotation": [
+              0,
+              0,
+              0
+            ],
+            "scale": [
+              1,
+              1,
+              1
+            ]
+          }
+        },
+        {
+          "type": "Light",
+          "data": {
+            "type": "point",
+            "color": "#f59e0b",
+            "intensity": 1,
+            "range": 22,
+            "castShadow": false
+          }
+        }
+      ],
+      "static": true,
+      "layer": 0
+    }
+  ]
+}

@@ -1,0 +1,210 @@
+{
+  "format": "linden-scene",
+  "version": 2,
+  "name": "Probe",
+  "settings": {
+    "ambientColor": "#666666",
+    "skybox": null
+  },
+  "entities": [
+    {
+      "id": "floor",
+      "name": "Floor",
+      "components": [
+        {
+          "type": "Transform",
+          "data": {
+            "position": [
+              0,
+              -0.25,
+              0
+            ],
+            "rotation": [
+              0,
+              0,
+              0
+            ],
+            "scale": [
+              20,
+              0.5,
+              20
+            ]
+          }
+        },
+        {
+          "type": "MeshRenderer",
+          "data": {
+            "primitive": "box",
+            "color": "#334155"
+          }
+        },
+        {
+          "type": "BoxCollider",
+          "data": {
+            "size": {
+              "x": 1,
+              "y": 1,
+              "z": 1
+            }
+          }
+        }
+      ],
+      "static": true
+    },
+    {
+      "id": "wall",
+      "name": "Wall",
+      "components": [
+        {
+          "type": "Transform",
+          "data": {
+            "position": [
+              0,
+              2,
+              -10
+            ],
+            "rotation": [
+              0,
+              0,
+              0
+            ],
+            "scale": [
+              10,
+              4,
+              0.5
+            ]
+          }
+        },
+        {
+          "type": "MeshRenderer",
+          "data": {
+            "primitive": "box",
+            "color": "#475569"
+          }
+        },
+        {
+          "type": "BoxCollider",
+          "data": {
+            "size": {
+              "x": 1,
+              "y": 1,
+              "z": 1
+            }
+          }
+        }
+      ],
+      "static": true
+    },
+    {
+      "id": "player",
+      "name": "Player",
+      "tags": [
+        "Player"
+      ],
+      "components": [
+        {
+          "type": "Transform",
+          "data": {
+            "position": [
+              0,
+              0.877,
+              0
+            ],
+            "rotation": [
+              0,
+              0,
+              0
+            ],
+            "scale": [
+              1,
+              1,
+              1
+            ]
+          }
+        },
+        {
+          "type": "CharacterController",
+          "data": {
+            "stepOffset": 0.3,
+            "slopeLimit": 50,
+            "skinWidth": 0.08
+          }
+        },
+        {
+          "type": "CapsuleCollider",
+          "data": {
+            "center": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "radius": 0.35,
+            "height": 1.8
+          }
+        },
+        {
+          "type": "CharacterMovement",
+          "data": {
+            "mode": "walk",
+            "walkSpeed": 5,
+            "jumpHeight": 1.2,
+            "gravity": 20,
+            "orientToMovement": false
+          }
+        },
+        {
+          "type": "Script",
+          "data": {
+            "src": "scripts/_ProbeA.ts",
+            "props": {}
+          }
+        }
+      ]
+    },
+    {
+      "id": "cam",
+      "name": "PlayerCamera",
+      "parentId": "player",
+      "tags": [
+        "MainCamera"
+      ],
+      "components": [
+        {
+          "type": "Transform",
+          "data": {
+            "position": [
+              0,
+              0.85,
+              0
+            ],
+            "rotation": [
+              0,
+              0,
+              0
+            ],
+            "scale": [
+              1,
+              1,
+              1
+            ]
+          }
+        },
+        {
+          "type": "Camera",
+          "data": {
+            "fov": 75,
+            "near": 0.05,
+            "far": 500
+          }
+        },
+        {
+          "type": "Script",
+          "data": {
+            "src": "scripts/_ProbeB.ts",
+            "props": {}
+          }
+        }
+      ]
+    }
+  ]
+}

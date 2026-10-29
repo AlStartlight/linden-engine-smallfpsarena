@@ -1,0 +1,175 @@
+<div id="hud-root">
+  <style>
+    #hud-root {
+      position: absolute; inset: 0;
+      font-family: "SF Mono", ui-monospace, "Cascadia Code", Menlo, monospace;
+      color: #e6f2ff; pointer-events: none; user-select: none;
+      letter-spacing: 0.08em;
+    }
+    #hud-root .topbar {
+      position: absolute; top: 22px; left: 50%; transform: translateX(-50%);
+      display: flex; gap: 14px; align-items: stretch;
+    }
+    #hud-root .panel {
+      background: linear-gradient(180deg, rgba(10,17,26,0.82), rgba(7,12,18,0.66));
+      border: 1px solid rgba(34,211,238,0.28);
+      border-radius: 10px; padding: 10px 16px 9px;
+      box-shadow: 0 6px 26px rgba(0,0,0,0.35), inset 0 1px 0 rgba(255,255,255,0.06);
+      backdrop-filter: blur(6px);
+      min-width: 124px; display: flex; flex-direction: column; gap: 2px;
+    }
+    #hud-root .label {
+      font-size: 10px; color: #7fd3e6; opacity: 0.85; letter-spacing: 0.22em;
+    }
+    #hud-root .value {
+      font-size: 26px; font-weight: 700; line-height: 1.1; color: #f7fbff;
+      font-variant-numeric: tabular-nums;
+    }
+    #hud-root #hud-score { color: #fbbf24; text-shadow: 0 0 18px rgba(251,191,36,0.35); }
+    #hud-root .sub {
+      font-size: 10px; color: #8fb6c9; opacity: 0.9; letter-spacing: 0.14em;
+    }
+    #hud-root .time-panel { min-width: 176px; justify-content: center; }
+    #hud-root .time-row { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; }
+    #hud-root .time-panel .value { font-size: 22px; color: #67e8f9; }
+    #hud-root .bar {
+      margin-top: 8px; height: 5px; border-radius: 99px; background: rgba(255,255,255,0.10);
+      overflow: hidden;
+    }
+    #hud-root #hud-timebar {
+      display: block; height: 100%; width: 100%;
+      background: linear-gradient(90deg, #22d3ee, #38bdf8);
+      box-shadow: 0 0 12px rgba(34,211,238,0.65);
+      transition: width 0.12s linear;
+    }
+    #hud-root .acc-panel { align-items: flex-end; }
+    #hud-root .acc-panel .value { font-size: 22px; color: #a5f3fc; }
+
+    #hud-root .cross {
+      position: absolute; left: 50%; top: 50%; width: 46px; height: 46px;
+      transform: translate(-50%, -50%);
+    }
+    #hud-root #hud-cross {
+      position: absolute; inset: 0; transition: transform 0.08s ease-out;
+    }
+    #hud-root .tick {
+      position: absolute; background: rgba(236,254,255,0.92);
+      box-shadow: 0 0 6px rgba(34,211,238,0.9); border-radius: 1px;
+    }
+    #hud-root .tick.t { left: 50%; top: 0; width: 2px; height: 11px; margin-left: -1px; }
+    #hud-root .tick.b { left: 50%; bottom: 0; width: 2px; height: 11px; margin-left: -1px; }
+    #hud-root .tick.l { top: 50%; left: 0; height: 2px; width: 11px; margin-top: -1px; }
+    #hud-root .tick.r { top: 50%; right: 0; height: 2px; width: 11px; margin-top: -1px; }
+    #hud-root .dot {
+      position: absolute; left: 50%; top: 50%; width: 3px; height: 3px; margin: -1.5px 0 0 -1.5px;
+      background: #fbbf24; border-radius: 50%; box-shadow: 0 0 8px rgba(251,191,36,0.9);
+    }
+    #hud-root #hud-hitmark {
+      position: absolute; left: 50%; top: 50%; width: 30px; height: 30px;
+      margin: -15px 0 0 -15px; opacity: 0; transform: rotate(45deg);
+      transition: opacity 0.05s linear;
+    }
+    #hud-root #hud-hitmark i {
+      position: absolute; background: #fb7185; box-shadow: 0 0 8px rgba(251,113,133,0.9);
+      border-radius: 1px;
+    }
+    #hud-root #hud-hitmark i:nth-child(1) { left: 50%; top: 0; width: 2px; height: 9px; margin-left: -1px; }
+    #hud-root #hud-hitmark i:nth-child(2) { left: 50%; bottom: 0; width: 2px; height: 9px; margin-left: -1px; }
+    #hud-root #hud-hitmark i:nth-child(3) { top: 50%; left: 0; height: 2px; width: 9px; margin-top: -1px; }
+    #hud-root #hud-hitmark i:nth-child(4) { top: 50%; right: 0; height: 2px; width: 9px; margin-top: -1px; }
+
+    #hud-root .hint {
+      position: absolute; left: 50%; bottom: 26px; transform: translateX(-50%);
+      font-size: 11px; letter-spacing: 0.18em; color: #b9d6e4;
+      background: rgba(8,13,20,0.62); border: 1px solid rgba(148,163,184,0.22);
+      padding: 8px 16px; border-radius: 999px; white-space: nowrap;
+      transition: opacity 0.6s ease; opacity: 1;
+    }
+    #hud-root .hint b { color: #67e8f9; font-weight: 600; }
+
+    #hud-root #hud-gameover {
+      position: absolute; inset: 0; display: none;
+      background: radial-gradient(circle at 50% 45%, rgba(8,20,28,0.72), rgba(3,7,11,0.88));
+    }
+    #hud-root #hud-gameover .inner {
+      position: absolute; inset: 0; display: flex; align-items: center; justify-content: center;
+      flex-direction: column; gap: 18px; text-align: center;
+    }
+    #hud-root .card {
+      background: linear-gradient(180deg, rgba(12,22,33,0.96), rgba(7,13,20,0.96));
+      border: 1px solid rgba(34,211,238,0.45);
+      border-radius: 16px; padding: 34px 46px 32px;
+      box-shadow: 0 24px 80px rgba(0,0,0,0.55), 0 0 0 1px rgba(255,255,255,0.04) inset, 0 0 60px rgba(34,211,238,0.12);
+      min-width: 380px;
+    }
+    #hud-root .card h1 {
+      margin: 0 0 4px; font-size: 15px; letter-spacing: 0.4em; color: #67e8f9; font-weight: 600;
+    }
+    #hud-root .card h2 {
+      margin: 0 0 22px; font-size: 40px; letter-spacing: 0.05em; color: #fbbf24; font-weight: 800;
+      text-shadow: 0 0 32px rgba(251,191,36,0.3);
+    }
+    #hud-root .stats {
+      display: flex; gap: 30px; justify-content: center; margin-bottom: 26px;
+    }
+    #hud-root .stat { display: flex; flex-direction: column; gap: 4px; }
+    #hud-root .stat span:first-child { font-size: 10px; letter-spacing: 0.2em; color: #7fa3b8; }
+    #hud-root .stat span:last-child {
+      font-size: 22px; font-weight: 700; color: #e6f7ff; font-variant-numeric: tabular-nums;
+    }
+    #hud-root #btn-restart {
+      pointer-events: auto; cursor: pointer;
+      font-family: inherit; font-size: 13px; font-weight: 700; letter-spacing: 0.24em;
+      color: #04121a; background: linear-gradient(180deg, #67e8f9, #22d3ee);
+      border: none; border-radius: 999px; padding: 14px 38px;
+      box-shadow: 0 10px 28px rgba(34,211,238,0.35);
+      transition: transform 0.12s ease, box-shadow 0.12s ease, filter 0.12s ease;
+    }
+    #hud-root #btn-restart:hover { transform: translateY(-1px); filter: brightness(1.06); box-shadow: 0 14px 34px rgba(34,211,238,0.5); }
+    #hud-root #btn-restart:active { transform: translateY(1px) scale(0.99); }
+  </style>
+
+  <div class="topbar">
+    <div class="panel" id="hud-score-panel">
+      <span class="label">SCORE</span>
+      <span class="value" id="hud-score">0</span>
+      <span class="sub" id="hud-streak">x1.0 combo</span>
+    </div>
+    <div class="panel time-panel">
+      <div class="time-row">
+        <span class="label">TIME</span>
+        <span class="value" id="hud-time">90s</span>
+      </div>
+      <div class="bar"><i id="hud-timebar"></i></div>
+    </div>
+    <div class="panel acc-panel">
+      <span class="label">ACCURACY</span>
+      <span class="value" id="hud-acc">0%</span>
+      <span class="sub" id="hud-hits">0 / 0</span>
+    </div>
+  </div>
+
+  <div class="cross">
+    <div id="hud-cross">
+      <i class="tick t"></i><i class="tick b"></i><i class="tick l"></i><i class="tick r"></i>
+      <i class="dot"></i>
+      <div id="hud-hitmark"><i></i><i></i><i></i><i></i></div>
+    </div>
+  </div>
+
+  <div class="hint" id="hud-hint"><b>WASD</b> MOVE &nbsp;·&nbsp; <b>SPACE</b> JUMP &nbsp;·&nbsp; <b>MOUSE</b> AIM &nbsp;·&nbsp; <b>HOLD LMB</b> FIRE</div>
+
+  <div id="hud-gameover">
+    <div class="inner">
+      <div class="card">
+        <h1>ROUND OVER</h1>
+        <h2 id="final-score">0</h2>
+        <div class="stats">
+          <div class="stat"><span>ACCURACY</span><span id="final-acc">0%</span></div>
+          <div class="stat"><span>BEST STREAK</span><span id="final-streak">0</span></div>
+        </div>
+        <button id="btn-restart" data-interactive>PLAY AGAIN</button>
+      </div>
+    </div>
+  </div>
+</div>
